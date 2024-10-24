@@ -1,0 +1,16 @@
+//const API_URL = `https://api.currentsapi.services/v1/search?apiKey=${API_KEY}`;
+
+
+// Async thunk to search for articles
+// export const searchArticles = createAsyncThunk<Article[], string>(
+//     'news/searchArticles',
+//     async (query) => {
+//         const response = await axios.get(`${BASE_URL}/search`, {
+//             params: { q: query, apiKey: API_KEY },
+//         });
+//         //console.log(`Searching for articles with query: ${query}`);
+//         //console.log(response.data); 
+
+//         return response.data.articles;
+//     }
+// );
