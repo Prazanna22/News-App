@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchArticles } from "../store/newSlice";
 import { AppDispatch } from "../store/store";
-import like from '../assets/like.png';
 import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
