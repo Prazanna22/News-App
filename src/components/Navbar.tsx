@@ -24,7 +24,7 @@ export const Navbar = () => {
           className="font-bold text-2xl md:text-3xl cursor-pointer"
           onClick={() => { navigate("/") }}
         >
-          NEWS <span className="">24/7</span>
+          NEWS <span className="text-[#91C8E4]">24/7</span>
         </h1>
         <div className="hidden md:flex space-x-8">
           <ul className="flex items-center space-x-8 cursor-pointer">

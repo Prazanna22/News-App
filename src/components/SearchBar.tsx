@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 interface SearchBarProps {
     onSearch: (query: string) => void;
 }
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {//passing interface into function
 
     const [query, setQuery] = useState('');
 

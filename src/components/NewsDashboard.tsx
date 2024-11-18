@@ -20,7 +20,7 @@ const NewsDashboard = () => {
 
     useEffect(() => {
         if (!query) {
-            dispatch(fetchHeadlines('all'));
+            dispatch(fetchHeadlines());
         }
     }, [dispatch, query]);
 

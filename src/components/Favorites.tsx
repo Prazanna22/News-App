@@ -22,7 +22,7 @@ const FavoritesPage = () => {
       {favorites.map((article) => (
         <div key={article.title} className='mb-5 p-5 '>
           <h2 className='text-2xl font-semibold'>{article.title}</h2>
-          <img src={article.urlToImage} alt={article.title} className='w-full h-64'/>
+          <img src={article.image} alt={article.title} className='w-full h-64'/>
           <p className='font-medium'>{article.description}</p>
           <div className="my-8">
           <button className='px-5 py-2 rounded-md bg-black text-white'>
