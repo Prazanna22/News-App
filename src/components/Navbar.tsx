@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { fetchArticles } from "../store/newSlice";
 import { AppDispatch } from "../store/store";
 import { useNavigate } from "react-router-dom";
+//import unlike from '../assets/unlike.png'
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -18,14 +19,14 @@ export const Navbar = () => {
   }
 
   return (
-    <div className="bg-[#4072db] text-white">
-      <div className="flex justify-between items-center px-5 py-4">
-        <h1
-          className="font-bold text-2xl md:text-3xl cursor-pointer"
-          onClick={() => { navigate("/") }}
-        >
-          NEWS <span className="text-[#91C8E4]">24/7</span>
+    <div className="bg-[#315cb9] text-white">
+      <div className="flex justify-between items-center px-5 py-8">
+        <div className="flex">
+        <h1 className="font-bold text-2xl md:text-3xl cursor-pointer uppercase " onClick={() => { navigate("/") }}>News 
+        <span className="text-black font-bold text-2xl md:text-3xl cursor-pointer uppercase">ly</span>
         </h1>
+       
+        </div>
         <div className="hidden md:flex space-x-8">
           <ul className="flex items-center space-x-8 cursor-pointer">
             <li onClick={() => { handleCategory("business") }}>Business</li>
@@ -33,7 +34,7 @@ export const Navbar = () => {
             <li onClick={() => { handleCategory("education") }}>Education</li>
             <li onClick={() => { handleCategory("sports") }}>Sports</li>
             <li onClick={() => { handleCategory("fashion") }}>Fashion</li>
-            <li onClick={() => {navigate("/favorites"),setIsOpen(false)}} >Favorites</li>
+            <li onClick={() => {navigate("/favorites"),setIsOpen(false)}} className="text-[#ff2b2b] font-semibold">Favorites</li>
           </ul>
         </div>
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -43,7 +44,7 @@ export const Navbar = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-[#4072db]">
+        <div className="md:hidden bg-[#315cb9]">
           <ul className="flex flex-col   pb-4 bg-white text-black  text-center font-medium">
             <li className="border-b-2 py-3" onClick={() => { handleCategory("business") }}>Business</li>
             <li className="border-b-2 py-3" onClick={() => { handleCategory("technology") }}>Technology</li>

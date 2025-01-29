@@ -28,11 +28,12 @@ const ArticleDetails = () => {
 
   return (
     <div className='mx-5 md:mx-20 lg:mx-40 my-10'>
-      <img src={article.urlToImage} alt={article.title} className='w-full h-96' />
+      <img src={article.image_url} alt={article.title} className='w-full h-96' />
       <h1 className='text-2xl md:text-4xl font-bold  my-10'>{article.title}</h1>
       <p className='font-medium'>{article.description}</p>
+      
       <div className="flex  items-center my-10">
-        <button className=' px-5 py-2 rounded-md hover:bg-white border-2 border-black hover:border-2 hover:border-[#4072db] hover:text-[#4072db] font-medium  bg-black text-white'><a href={article.url} target="_blank" rel="noopener noreferrer" >Read Full Article</a></button>
+        <button className=' px-5 py-2 rounded-md hover:bg-white border-2 border-black hover:border-2 hover:border-[#4072db] hover:text-[#4072db] font-medium  bg-black text-white'><a href={article.link} target="_blank" rel="noopener noreferrer" >Read Full Article</a></button>
         <button onClick={() => handleFavoriteToggle()}><img src={isFavorite ? like : unlike} alt={isFavorite ? 'Liked' : 'Unliked'} className='w-8 mx-6' /></button>
       </div>
     </div>

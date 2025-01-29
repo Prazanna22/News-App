@@ -1,15 +1,16 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_KEY = '578072c2dcbc433291d3d7ff5b894af4';
-const BASE_URL = 'https://newsapi.org/v2';
+const API_KEY = 'pub_58205e6aad791e30c2c84f9bec8c343c4e07d';
+const BASE_URL = 'https://newsdata.io/api/1/latest?';
 
 interface Article {
     title: string;
-    urlToImage: string;
+    image_url: string;
     description: string;
-    url: string;
+    link: string;
     source: { name: string }
+    content:String;
 }
 
 interface NewsState {
@@ -23,20 +24,20 @@ interface NewsState {
 export const fetchArticles = createAsyncThunk(
     'news/fetchArticles',
     async (query: string) => {
-        const response = await axios.get(`${BASE_URL}/everything`, {
+        const response = await axios.get(BASE_URL, {
             params: { apiKey: API_KEY, q: query, language: 'en' },
         });
-        return response.data.articles;
+        return response.data.results || [];
     }
 );
 
 export const fetchHeadlines = createAsyncThunk(
     'news/fetchHeadlines',
     async () => {
-        const response = await axios.get(`${BASE_URL}/top-headlines`, {
+        const response = await axios.get(BASE_URL, {
             params: { apiKey: API_KEY, language: 'en' },
         });
-        return response.data.articles;
+        return response.data.results;
     }
 );
 
